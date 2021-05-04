@@ -14,7 +14,9 @@ const userModel = mongoose.model('user', user, 'user');
 
 
 user.methods.validPassword = async (password) => {
-    let check = await bcrypt.compare(passport, this.password);
+    const u = this;
+    const check = await bcrypt.compare(password, u.password);
+    console.log(check);
     return check;
 }
 

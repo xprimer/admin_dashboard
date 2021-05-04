@@ -11,11 +11,11 @@ router.post("/login", async (req, res, next) => {
     passport.authenticate("login", async (err, user, info) => {
       try {
         if (err || !user) {
-          const error = new Error("Login error occured !");
-          next(error);
+          // const error = new Error("Login error occured !");
+          // next(error);
           return res.status(400).json({
             status: "error",
-            data: [error],
+            data: [],
             messages: [{ loginErr: "Login error" }],
           });
         }

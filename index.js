@@ -6,7 +6,6 @@ const morgan = require("morgan");
 const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo");
 const cors = require("cors");
-const path = require("path");
 const app = express();
 
 const port = 3000;

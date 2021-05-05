@@ -46,6 +46,29 @@ router.post("/login", async (req, res, next) => {
   }
 });
 
+router.get('/login', (req,res,next) => {
+  if(req.isAuthenticated()) {
+    return res.status(200).json({
+      status : 'success',
+      data: [req.user],
+      messages : [
+        {
+          message : 'You have loged in !'
+        }
+      ]
+    })
+  } else {
+    return res.status(400).json({
+      status : 'error',
+      messages : [
+        {
+          error : 'You have not loged in !'
+        }
+      ]
+    })
+  }
+})
+
 router.get("/logout", (req, res, next) => {
   try {
     if (req.isAuthenticated()) {

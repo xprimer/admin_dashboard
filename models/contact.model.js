@@ -17,7 +17,7 @@ const contact = new Schema({
             phone: Number,
             address: String,
             age: Number,
-            birthday : String,
+            birthday : Date,
         },
         socialInfo : {
             email : String,
